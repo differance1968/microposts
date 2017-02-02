@@ -1,0 +1,9 @@
+<h3>フォロー一覧</h3>
+<h4><%= gravatar_for @user %>
+        <%= @user.name %>
+</h4>
+  <p>   <% @users.each do |user| %>
+  <%= link_to user.name, user %>
+  <%= gravatar_for @user %>
+  </p>
+<% end %>
