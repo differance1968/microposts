@@ -13,8 +13,11 @@
     <h3>フォロワー一覧</h3>
     <ol>
       <% @users.each do |user| %>
-        <li class="user_image"><%= link_to gravatar_for(user, size: 50), user %>
-        <span class="user"><%= link_to user.name, user %></span></li>
+        
+        <li class="user_image clearfix">
+          <%= link_to gravatar_for(user, size: 50), user %>
+          <span class="user"><%= link_to user.name, user %></span>
+        </li>
       <% end %>
     </ol>
   </div>
