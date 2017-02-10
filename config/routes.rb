@@ -11,7 +11,13 @@ Rails.application.routes.draw do
       get 'followers'
     end
   end
-  resources :microposts
+  
+  resources :microposts do
+    member do
+      get 'retweet'
+    end
+  end
+  
   resources :relationships, only: [:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -11,15 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170129120919) do
+ActiveRecord::Schema.define(version: 20170208055846) do
 
   create_table "microposts", force: :cascade do |t|
     t.integer  "user_id"
     t.text     "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.integer  "retweet_micropost_id"
   end
 
+  add_index "microposts", ["retweet_micropost_id"], name: "index_microposts_on_retweet_micropost_id"
   add_index "microposts", ["user_id"], name: "index_microposts_on_user_id"
 
   create_table "relationships", force: :cascade do |t|
