@@ -22,7 +22,7 @@ class MicropostsController < ApplicationController
     
     def retweet
       original = Micropost.find(params[:id])
-      original.retweeted_microposts.build(user_id: current_user.id)
+      #original.retweeted_microposts.build(user_id: current_user.id)
       retweet = current_user.microposts.build(retweet_micropost_id: original.id, content:"#{original.content}")
       retweet.save
       redirect_to root_url
