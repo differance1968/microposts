@@ -2,9 +2,9 @@
   <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
   <span class="content">
-    <% if micropost.not_original? %>
-      <%= micropost.retweet_micropost.user.name %> さんの投稿：
-    <% end %>
+  #<% if micropost.not_original? %>
+      #<%= micropost.retweet_micropost.user.name %> さんの投稿：
+    #<% end %>
     <%= micropost.content %>
   </span>
   <span class="timestamp">
