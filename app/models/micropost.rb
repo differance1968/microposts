@@ -5,4 +5,12 @@ class Micropost < ActiveRecord::Base
   
   belongs_to :retweet_micropost, class_name:"Micropost", foreign_key:"retweet_micropost_id" 
   has_many :retweeted_microposts, class_name:"Micropost", foreign_key:"retweet_micropost_id" 
+  
+  def original?
+    retweet_micropost_id.nil?
+  end
+  
+  def not_original?
+    !original?
+  end
 end
